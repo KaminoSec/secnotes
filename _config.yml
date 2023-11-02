@@ -1,8 +1,53 @@
-title: Just the Docs Template
+title: Kamino SecNotes
 description: A starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
+remote_theme: pmarsceill/just-the-docs
 
 url: https://just-the-docs.github.io
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  # Template Repository: https://github.com/just-the-docs/just-the-docs-template
+
+# Set a path/url to a logo that will be displayed instead of the title
+# logo: '/assets/images/logo.png'
+
+# Set a path/url to a favicon that will be displayed by the browser
+favicon_ico: '/assets/images/favicon.ico'
+
+# Color scheme supports "light" (default) and "dark"
+color_scheme: dark
+
+# For copy button on code
+enable_copy_code_button: true
+
+# Define Jekyll collections
+collections:
+  # Define a collection named "tests", its documents reside in the "_tests" directory
+  recon_scanning:
+    permalink: '/:collection/:path/'
+    output: true
+  enumeration:
+    permalink: '/:collection/:path/'
+    output: true
+  exploitation:
+    permalink: '/:collection/:path/'
+    output: true
+  ctfs:
+    permalink: '/:collection/:path/'
+    output: true
+
+just_the_docs:
+  # Define which collections are used in just-the-docs
+  collections:
+    recon_scanning:
+      # Give the collection a name
+      name: recon_scanning
+    enumeration:
+      # Give the collection a name
+      name: enumeration
+    exploitation:
+      # Give the collection a name
+      name: exploitation
+    ctfs:
+      # Give the collection a name
+      name: CTFs
