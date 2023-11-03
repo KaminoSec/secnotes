@@ -9,12 +9,6 @@ nav_order: 1
 
 ---
 
-## Host Info
-
-- **OS**: Linxu
-- **Hostname**: seppuku
-- **IP**: 192.168.166.90
-
 ## Discovered Ports for Enumeration
 
 - 21 - FTP
@@ -27,8 +21,8 @@ nav_order: 1
 
 ## Users and Credentials
 
-- **Users**: seppuku, samurai, tanto
-- **Credentials**: seppuku:eeyoree, samurai:12345685213456!@!@A
+- _Users_: seppuku, samurai, tanto
+- _Credentials_: seppuku:eeyoree, samurai:12345685213456!@!@A
 
 # Scanning (Nmap)
 

@@ -9,11 +9,6 @@ nav_order: 3
 
 ---
 
-## Host Info
-
-- _OS_: Linux
-- _IP_: 192.168.202.80
-
 ## Discovered Ports for Enumeration
 
 - _22_ - SSH
@@ -118,7 +113,7 @@ URL: 192.168.202.80/console/file.php?file=../../../../../../../var/log/auth.log&
 
 ---
 
-## Spawn TTY Shell
+## Upgrade to TTY Shell
 
 ```bash
 python3 -c 'import pty; pty.spawn("/bin/bash")'

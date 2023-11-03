@@ -9,12 +9,6 @@ nav_order: 2
 
 ---
 
-## Host Info
-
-- **OS**: Linux
-- **Hostname**: katana
-- **IP**: 192.168.183.83
-
 ## Discovered Ports for Enumeration
 
 - 21 - FTP
@@ -113,7 +107,7 @@ Receive back a reverse shell on the netcat listener.
 
 ---
 
-Elevate shell
+## Upgrade to TTY Shell
 
 ```bash
 python3 -c 'import pty; pty.spawn("/bin/bash")'
