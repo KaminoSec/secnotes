@@ -32,6 +32,12 @@ collections:
   exploitation:
     permalink: '/:collection/:path/'
     output: true
+  privesc_linux:
+    permalink: '/:collection/:path/'
+    output: true
+  privesc_windows:
+    permalink: '/:collection/:path/'
+    output: true
   ctfs:
     permalink: '/:collection/:path/'
     output: true
@@ -48,6 +54,12 @@ just_the_docs:
     exploitation:
       # Give the collection a name
       name: exploitation
+    privesc_linux:
+      # Give the collection a name
+      name: privesc_linux
+    privesc_windows:
+      # Give the collection a name
+      name: privesc_windows
     ctfs:
       # Give the collection a name
       name: CTFs
