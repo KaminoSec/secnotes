@@ -17,15 +17,13 @@ nav_order: 1
 
 ## Discovered Ports for Enumeration
 
-| Port/Service        | Version | Notes |
-| ------------------- | ------- | ----- |
-| 21 - FTP            |         |       |
-| 22 - SSH            |         |       |
-| 80 - HTTP           |         |       |
-| 445 - SMB           |         |       |
-| 7080 - ssl empoweri |         |       |
-| 7601 - HTTP         |         |       |
-| 8088 - HTTP         |         |       |
+- 21 - FTP
+- 22 - SSH
+- 80 - HTTP
+- 445 - SMB
+- 7080 - ssl empoweri
+- 7601 - HTTP
+- 8088 - HTTP
 
 ## Users and Credentials
 

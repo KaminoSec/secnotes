@@ -1,5 +1,30 @@
+html {
+  background-color: #18171d !important;
+}
+
 body {
   font-family: 'Segoe UI', Helvetica, Arial, sans-serif !important;
+  background-color: #18171d !important;
+}
+
+.main {
+  background-color: #18171d !important;
+}
+
+.main-header {
+  background-color: #18171d !important;
+}
+
+.side-bar {
+  background-color: #18171d !important;
+}
+
+.search-input {
+  background-color: #18171d !important;
+}
+
+.input {
+  background-color: #18171d !important;
 }
 
 p {
@@ -29,7 +54,8 @@ h1:first-of-type {
   color: #007fff !important;
 }
 
-strong {
+strong,
+em {
   color: #7cfc00 !important;
 }
 

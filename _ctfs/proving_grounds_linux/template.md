@@ -14,16 +14,9 @@ This is Katana - pineapple
 ## Host Info
 
 - **OS**:
-- **Hostname**:
 - **IP**:
 
 ## Discovered Ports for Enumeration
-
-| Port/Service | Version | Notes |
-| ------------ | ------- | ----- |
-| 21 - FTP     | Text    | Text  |
-| 22 - SSH     | Text    | Text  |
-| 80 - HTTP    | Text    | Text  |
 
 ## Users and Credentials
 

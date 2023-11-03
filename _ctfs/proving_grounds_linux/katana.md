@@ -17,14 +17,12 @@ nav_order: 2
 
 ## Discovered Ports for Enumeration
 
-| Port/Service    | Version | Notes |
-| --------------- | ------- | ----- |
-| 21 - FTP        |         |       |
-| 22 - SSH        |         |       |
-| 80 - HTTP       |         |       |
-| 7080 - empoweri |         |       |
-| 8088 - HTTP     |         |       |
-| 8715 - HTTP     |         |       |
+- 21 - FTP
+- 22 - SSH
+- 80 - HTTP
+- 7080 - empoweri
+- 8088 - HTTP
+- 8715 - HTTP
 
 ## Users and Credentials
 
@@ -150,4 +148,4 @@ os.system("/bin/bash")
 
 Make **priv.py** executable and run with python2.7 to get root shell.
 
-![root](../../..s/assets/images/ctfs/proving_grounds/katana/root.png)
+![root](../../../assets/images/ctfs/proving_grounds/katana/root.png)
