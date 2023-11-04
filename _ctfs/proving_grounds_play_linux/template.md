@@ -1,7 +1,7 @@
 <!-- ---
 layout: default
 title: Katana
-parent: Proving Grounds - Linux
+parent: Proving Grounds Play
 nav_order: 2
 --- -->
 
@@ -21,7 +21,7 @@ nav_order: 2
 ---
 
 ```bash
-sudo nmap -Pn -p- -sC -sV -T4 -vv --open <ip>
+sudo nmap -Pn -p- -sC -sV -T4 --open <ip>
 ```
 
 # Enumeration

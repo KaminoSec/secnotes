@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Seppuku
-parent: Proving Grounds - Linux
+parent: Proving Grounds Play
 nav_order: 1
 ---
 
@@ -24,7 +24,7 @@ nav_order: 1
 - _Users_: seppuku, samurai, tanto
 - _Credentials_: seppuku:eeyoree, samurai:12345685213456!@!@A
 
-# Scanning (Nmap)
+# Scanning
 
 ---
 

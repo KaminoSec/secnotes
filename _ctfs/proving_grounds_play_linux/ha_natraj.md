@@ -1,25 +1,11 @@
 ---
 layout: default
 title: Ha Natraj
-parent: Proving Grounds - Linux
+parent: Proving Grounds Play
 nav_order: 3
 ---
 
-# Ha Natraj
-
----
-
-## Discovered Ports for Enumeration
-
-- _22_ - SSH
-- _80_ - http
-
-## Users and Credentials
-
-- _Users_: natraj, mahakal
-- _Credentials_:
-
-# Scanning (Nmap)
+# Scanning
 
 ---
 

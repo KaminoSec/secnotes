@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Moneybox
-parent: Proving Grounds - Linux
+parent: Proving Grounds Play
 nav_order: 5
 ---
 

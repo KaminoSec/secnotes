@@ -1,14 +1,8 @@
 ---
 layout: default
 title: OnSystemShellDredd
-parent: Proving Grounds - Linux
+parent: Proving Grounds Play
 nav_order: 4
----
-
-This is Katana - pineapple
-
-# OnSystemShellDredd
-
 ---
 
 ## Discovered Ports for Enumeration
@@ -21,7 +15,7 @@ This is Katana - pineapple
 - _Users_: hannah
 - _Credentials_:
 
-# Scanning (Nmap)
+# Scanning
 
 ---
 

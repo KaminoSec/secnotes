@@ -1,29 +1,11 @@
 ---
 layout: default
 title: Katana
-parent: Proving Grounds - Linux
+parent: Proving Grounds Play
 nav_order: 2
 ---
 
-# Katana
-
----
-
-## Discovered Ports for Enumeration
-
-- 21 - FTP
-- 22 - SSH
-- 80 - HTTP
-- 7080 - empoweri
-- 8088 - HTTP
-- 8715 - HTTP
-
-## Users and Credentials
-
-- **Users**:
-- **Credentials**:
-
-# Scanning (Nmap)
+# Scanning
 
 ---
 
