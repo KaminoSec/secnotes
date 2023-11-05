@@ -16,7 +16,7 @@ nav_order: 2
 - _Users_:
 - _Credentials_:
 
-# Scanning (Nmap)
+# Scanning
 
 ---
 
