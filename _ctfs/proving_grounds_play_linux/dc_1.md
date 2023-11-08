@@ -53,7 +53,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ## 80 | HTTP
 
-Running Drupo version 7 so we immediately try _Drupalgeddon2_.
+Running Drupal version 7 so we immediately try _Drupalgeddon2_.
 
 # Exploitation
 
