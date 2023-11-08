@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Perl
-parent: GTFOBins
+parent: SUID
 nav_order: 1
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: hping3
-parent: GTFOBins
+parent: SUID
 nav_order: 2
 ---
 

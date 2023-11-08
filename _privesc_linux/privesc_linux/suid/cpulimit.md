@@ -1,7 +1,7 @@
 ---
 layout: default
 title: cpulimit
-parent: GTFOBins
+parent: SUID
 nav_order: 2
 ---
 

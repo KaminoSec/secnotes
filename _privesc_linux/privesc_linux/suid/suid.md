@@ -1,8 +1,8 @@
 ---
 layout: default
-title: GTFOBins
+title: SUID
 nav_order: 1
 has_children: true
 ---
 
-This is the GTFOBins section
+This is the SUID section
