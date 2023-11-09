@@ -78,3 +78,11 @@ getcap -r / 2>/dev/null
 
 - [ ] test discovered credentials against all users
 - [ ] attempt hydra ssh password crack for discovered users
+- [ ] check _/tmp_, _/var/tmp_, _/etc_, and _/dev/shm_
+- [ ] Check if /etc/passwd is writeable
+
+```bash
+mowree@EvilBoxOne:~$ ls -la /etc/passwd
+-rw-rw-rw- 1 root root 1398 ago 16  2021 /etc/passwd
+
+```
