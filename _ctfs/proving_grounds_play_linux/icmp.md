@@ -152,7 +152,7 @@ len=128 ip=127.0.0.1 ttl=64 id=9781 icmp_seq=0 rtt=2.6 ms
 
 As we can see the file is printed line by line in our second SSH session.
 
-![hping3](../../../assets/images/ctfs/proving_grounds/icmp/hping3.png)
+![hping](../../../assets/images/ctfs/proving_grounds/icmp/hping.png)
 
 We now have the private rsa key for the root user and can simply SSH as root
 
