@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Lolyu
+title: Loly
 parent: Proving Grounds Play
 nav_order: 26
 ---
