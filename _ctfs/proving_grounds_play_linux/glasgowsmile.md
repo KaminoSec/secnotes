@@ -266,7 +266,7 @@ Mnv H mddc xntq gdko Zamdq, trd sghr ozrrvnqc, xnt vhkk ehmc sgd qhfgs vzx sn rn
 
 This is a Rot encoded file...Rot1 specifically.
 
-![rot1](../../../assets/images/ctfs/proving_grounds/glasgowsmile/ro1.png)
+![rot1](../../../assets/images/ctfs/proving_grounds/glasgowsmile/rot1.png)
 
 The MD5 encoded string resolves to the password _I33hope99my0death000makes44more8cents00than0my0life0_ for the _abner_ user.
 
