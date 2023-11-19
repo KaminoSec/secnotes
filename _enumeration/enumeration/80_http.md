@@ -46,7 +46,7 @@ whatweb 10.10.242.194
 ```bash
 
 # Custom list that combines the /dirb/big.txt and /dirbuster/directory-list-lowercase-2.3-medium.txt
-gobuster dir -u http://192.168.213.84 -w /usr/share/wordlists/custom/large_directories.txt -x aspx,php,txt,conf -t 80 -k
+gobuster dir -u http://192.168.213.84 -w /usr/share/wordlists/custom/large_final.txt -x aspx,php,txt,conf -t 80 -k
 
 # Seclists
 gobuster dir -u http://10.10.10.187 -w /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt -x php,txt,html -t 80
@@ -55,7 +55,7 @@ gobuster dir -u http://10.10.10.187 -w /usr/share/seclists/Discovery/Web-Content
 gobuster dir -u http://10.10.10.10 -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -x aspx,php,txt,conf -t 80
 
 # CGI-Bin for Shellshock
-gobuster dir -u http://192.168.202.83:8088/cgi-bin/ -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -k -t 80 -x sh,cgi
+gobuster dir -u http://192.168.202.83:8088/cgi-bin/ -w /usr/share/wordlists/custom/large_final.txt -k -t 80 -x sh,cgi
 ```
 
 Common Flags:
