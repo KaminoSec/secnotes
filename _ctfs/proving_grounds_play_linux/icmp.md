@@ -101,11 +101,6 @@ uid=1000(fox) gid=1000(fox) groups=1000(fox)
 ```bash
 $ sudo -l
 [sudo] password for fox:
-
-Sorry, try again.
-[sudo] password for fox:
-Sorry, try again.
-[sudo] password for fox:
 Matching Defaults entries for fox on icmp:
     env_reset, mail_badpass,
     secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin

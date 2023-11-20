@@ -5,7 +5,7 @@ parent: SUID
 nav_order: 2
 ---
 
-# hping3
+# hping3 (Suid)
 
 ---
 

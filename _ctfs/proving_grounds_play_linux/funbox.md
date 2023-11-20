@@ -114,9 +114,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 
 ---
 
-TODO
-
-- look for wp-config.php
+## Enumerate wp-config.php File
 
 ```bash
 www-data@funbox:/var/www/html$ cat wp-config.php
