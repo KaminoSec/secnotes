@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Perl
-parent: SUID
+parent: Sudo
 nav_order: 1
 ---
 

@@ -38,6 +38,12 @@ collections:
   privesc_windows:
     permalink: '/:collection/:path/'
     output: true
+  cracking_and_decoding:
+    permalink: '/:collection/:path/'
+    output: true
+  shells_and_transfers:
+    permalink: '/:collection/:path/'
+    output: true
   ctfs:
     permalink: '/:collection/:path/'
     output: true
@@ -60,6 +66,12 @@ just_the_docs:
     privesc_windows:
       # Give the collection a name
       name: privesc_windows
+    cracking_and_decoding:
+      # Give the collection a name
+      name: cracking_and_decoding
+    shells_and_transfers:
+      # Give the collection a name
+      name: shells_and_transfers
     ctfs:
       # Give the collection a name
       name: CTFs

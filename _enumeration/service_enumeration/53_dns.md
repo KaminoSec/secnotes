@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 53 | DNS
+parent: Service Enumeration
 nav_order: 2
 ---
 

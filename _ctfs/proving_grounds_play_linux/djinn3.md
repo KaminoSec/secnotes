@@ -576,7 +576,7 @@ jason ALL=(root) PASSWD: /usr/bin/apt-get
 
 At the very bottom we can see the user _jason_ that has root access to the command _/usr/bin/apt-get_
 
-Since this user is not currently in _/etc/passwd_ they must been a hidden user.
+Since this user is not currently in _/etc/passwd_ they must been a deleted user.
 
 If we can _su_ to _jason_ then we can pivot to root.
 

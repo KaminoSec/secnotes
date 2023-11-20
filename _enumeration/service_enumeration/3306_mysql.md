@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 3306 | MYSQL
+parent: Service Enumeration
 nav_order: 5
 ---
 

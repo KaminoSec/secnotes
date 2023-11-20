@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Port Scanning
+has_children: true
 nav_order: 2
 ---
 
