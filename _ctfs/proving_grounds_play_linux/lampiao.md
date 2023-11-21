@@ -2,7 +2,7 @@
 layout: default
 title: Lampiao
 parent: Proving Grounds Play
-nav_order: 12
+nav_order: 22
 ---
 
 # Scanning

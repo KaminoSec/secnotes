@@ -2,7 +2,7 @@
 layout: default
 title: Mozilla Decrypt
 parent: Cracking
-nav_order: 3
+nav_order: 6
 ---
 
 # Mozilla Decrypt

@@ -2,7 +2,7 @@
 layout: default
 title: Monitoring
 parent: Proving Grounds Play
-nav_order: 10
+nav_order: 25
 ---
 
 # Monitoring

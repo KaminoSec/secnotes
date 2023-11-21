@@ -2,7 +2,7 @@
 layout: default
 title: Pwned1
 parent: Proving Grounds Play
-nav_order: 23
+nav_order: 30
 ---
 
 # Scanning

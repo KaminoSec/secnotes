@@ -2,7 +2,7 @@
 layout: default
 title: Katana
 parent: Proving Grounds Play
-nav_order: 2
+nav_order: 21
 ---
 
 # Scanning

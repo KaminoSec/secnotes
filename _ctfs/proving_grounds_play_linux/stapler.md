@@ -2,7 +2,7 @@
 layout: default
 title: Stapler
 parent: Proving Grounds Play
-nav_order: 27
+nav_order: 34
 ---
 
 # Scanning

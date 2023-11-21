@@ -2,7 +2,7 @@
 layout: default
 title: InfosecPrep
 parent: Proving Grounds Play
-nav_order: 21
+nav_order: 19
 ---
 
 # Scanning

@@ -2,7 +2,7 @@
 layout: default
 title: ICMP
 parent: Proving Grounds Play
-nav_order: 20
+nav_order: 18
 ---
 
 # Scanning

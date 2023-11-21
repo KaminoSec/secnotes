@@ -2,7 +2,7 @@
 layout: default
 title: OnSystemShellDredd
 parent: Proving Grounds Play
-nav_order: 4
+nav_order: 28
 ---
 
 ## Discovered Ports for Enumeration

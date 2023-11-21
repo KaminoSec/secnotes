@@ -2,7 +2,7 @@
 layout: default
 title: Solstice
 parent: Proving Grounds Play
-nav_order: 8
+nav_order: 33
 ---
 
 # Scanning

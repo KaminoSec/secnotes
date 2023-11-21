@@ -2,7 +2,7 @@
 layout: default
 title: Insanity Hosting
 parent: Proving Grounds Play
-nav_order: 32
+nav_order: 20
 ---
 
 # Scanning

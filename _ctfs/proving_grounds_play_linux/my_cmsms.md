@@ -2,7 +2,7 @@
 layout: default
 title: My-CMSMS
 parent: Proving Grounds Play
-nav_order: 30
+nav_order: 26
 ---
 
 # Scanning

@@ -2,7 +2,7 @@
 layout: default
 title: Loly
 parent: Proving Grounds Play
-nav_order: 26
+nav_order: 23
 ---
 
 # Scanning

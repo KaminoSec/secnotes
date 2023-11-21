@@ -2,7 +2,7 @@
 layout: default
 title: Election 1
 parent: Proving Grounds Play
-nav_order: 17
+nav_order: 11
 ---
 
 # Scanning

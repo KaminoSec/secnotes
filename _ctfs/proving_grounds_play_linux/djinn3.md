@@ -2,7 +2,7 @@
 layout: default
 title: Djinn3
 parent: Proving Grounds Play
-nav_order: 31
+nav_order: 9
 ---
 
 # Scanning

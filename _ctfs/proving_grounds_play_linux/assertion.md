@@ -2,7 +2,7 @@
 layout: default
 title: Assertion
 parent: Proving Grounds Play
-nav_order: 29
+nav_order: 2
 ---
 
 # Scanning

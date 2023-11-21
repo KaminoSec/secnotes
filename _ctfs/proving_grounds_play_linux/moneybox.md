@@ -2,7 +2,7 @@
 layout: default
 title: Moneybox
 parent: Proving Grounds Play
-nav_order: 5
+nav_order: 24
 ---
 
 # Moneybox

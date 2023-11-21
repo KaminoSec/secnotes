@@ -2,7 +2,7 @@
 layout: default
 title: Ha Natraj
 parent: Proving Grounds Play
-nav_order: 3
+nav_order: 17
 ---
 
 # Scanning

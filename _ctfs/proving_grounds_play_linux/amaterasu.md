@@ -2,7 +2,7 @@
 layout: default
 title: Amaterasu
 parent: Proving Grounds Play
-nav_order: 22
+nav_order: 1
 ---
 
 # Scanning

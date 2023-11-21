@@ -2,7 +2,7 @@
 layout: default
 title: So Simple
 parent: Proving Grounds Play
-nav_order: 9
+nav_order: 32
 ---
 
 # Scanning

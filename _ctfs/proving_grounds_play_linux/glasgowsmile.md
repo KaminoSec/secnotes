@@ -2,7 +2,7 @@
 layout: default
 title: GlasgowSmile
 parent: Proving Grounds Play
-nav_order: 33
+nav_order: 16
 ---
 
 # Scanning

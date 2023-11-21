@@ -2,7 +2,7 @@
 layout: default
 title: BBSCute
 parent: Proving Grounds Play
-nav_order: 6
+nav_order: 3
 ---
 
 # Scanning

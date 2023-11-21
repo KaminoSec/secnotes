@@ -2,7 +2,7 @@
 layout: default
 title: Evilbox-One
 parent: Proving Grounds Play
-nav_order: 15
+nav_order: 13
 ---
 
 # Scanning

@@ -2,7 +2,7 @@
 layout: default
 title: Tre
 parent: Proving Grounds Play
-nav_order: 24
+nav_order: 37
 ---
 
 # Scanning

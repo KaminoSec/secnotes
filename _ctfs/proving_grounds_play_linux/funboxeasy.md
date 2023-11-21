@@ -2,7 +2,7 @@
 layout: default
 title: FunboxEasy
 parent: Proving Grounds Play
-nav_order: 14
+nav_order: 15
 ---
 
 # Scanning

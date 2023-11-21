@@ -2,7 +2,7 @@
 layout: default
 title: Drifting Blues 6
 parent: Proving Grounds Play
-nav_order: 16
+nav_order: 10
 ---
 
 # Scanning

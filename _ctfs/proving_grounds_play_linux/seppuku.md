@@ -2,7 +2,7 @@
 layout: default
 title: Seppuku
 parent: Proving Grounds Play
-nav_order: 1
+nav_order: 31
 ---
 
 # Seppuku

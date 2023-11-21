@@ -2,7 +2,7 @@
 layout: default
 title: Empire Breakout
 parent: Proving Grounds Play
-nav_order: 13
+nav_order: 12
 ---
 
 # Scanning

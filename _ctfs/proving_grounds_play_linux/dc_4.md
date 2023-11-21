@@ -2,7 +2,7 @@
 layout: default
 title: DC-4
 parent: Proving Grounds Play
-nav_order: 19
+nav_order: 7
 ---
 
 # Scanning

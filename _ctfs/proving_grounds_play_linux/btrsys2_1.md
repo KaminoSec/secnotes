@@ -2,7 +2,7 @@
 layout: default
 title: BTRSys2.1
 parent: Proving Grounds Play
-nav_order: 25
+nav_order: 4
 ---
 
 # Scanning

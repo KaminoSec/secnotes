@@ -2,7 +2,7 @@
 layout: default
 title: Sunset Midnight
 parent: Proving Grounds Play
-nav_order: 11
+nav_order: 36
 ---
 
 # Scanning

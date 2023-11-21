@@ -2,7 +2,7 @@
 layout: default
 title: Potato
 parent: Proving Grounds Play
-nav_order: 15
+nav_order: 29
 ---
 
 # Scanning
