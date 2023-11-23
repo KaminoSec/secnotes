@@ -135,6 +135,8 @@ Linpeas shows there is a MySQL service running on the loopback service.
 
 ![password](../../../assets/images/ctfs/proving_grounds/fractal/password.png)
 
+The _phpmyadmin_ creds were a deadend.
+
 ## Search for string "password"
 
 ```bash
