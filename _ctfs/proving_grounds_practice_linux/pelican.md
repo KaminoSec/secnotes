@@ -68,7 +68,7 @@ This example uses netcat to open a reverse shell to a listener on 10.0.0.64:4444
 
 ```
 
-![config](../../../assets/images/ctfs/proving_grounds/pelican/congif.png)
+![config](../../../assets/images/ctfs/proving_grounds/pelican/config.png)
 
 After clicking the _commit_ button we get a reverse shell...
 
