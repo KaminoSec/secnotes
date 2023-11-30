@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Port Knocking
-parent: Port Scanning
-nav_order: 1
+nav_order: 3
 ---
 
 # Port Knocking

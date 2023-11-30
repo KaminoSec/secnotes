@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Port Scanning
-has_children: true
 nav_order: 2
 ---
 
@@ -9,7 +8,7 @@ nav_order: 2
 
 ---
 
-## Nmap
+## Nmap - Initial Scanning
 
 ### Service and version detection plus script scan
 
@@ -39,3 +38,33 @@ nmap -Pn -sU -vv -T4 --open 10.12.1.36
 ```
 
 - -sU: UDP scan
+
+## Nmap Scripting Engine
+
+Update script database
+
+```bash
+┌──(vagrant㉿kali)-[~/Documents/PG/PRACTICE/]
+└─$ sudo nmap --script-updatedb
+Starting Nmap 7.94 ( https://nmap.org ) at 2023-11-29 21:41 EST
+NSE: Updating rule database.
+NSE: Script Database updated successfully.
+Nmap done: 0 IP addresses (0 hosts up) scanned in 0.58 seconds
+
+```
+
+SMB-OS Discovery
+
+```bash
+┌──(vagrant㉿kali)-[~/Documents/PG/PRACTICE/]
+└─$ sudo nmap --script smb-os-discovery -p 445 192.168.1.6
+
+```
+
+SMB-Enum-Shares
+
+```bash
+┌──(vagrant㉿kali)-[~/Documents/PG/PRACTICE/]
+└─$ sudo nmap --script smb-enum-shares -p 445 192.168.1.6
+
+```
