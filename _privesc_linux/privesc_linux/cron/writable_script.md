@@ -126,13 +126,13 @@ Enumerate Processes and see _root_ is running _/bin/sh_ to run PHP on an interna
 ps aux | grep -i 'root' --color=auto
 ```
 
-![proc](../../../assets/images/ctfs/proving_grounds/solstice/proc.png)
+![proc](../../../../assets/images/ctfs/proving_grounds/solstice/proc.png)
 
 We know from checking SUID directories that _/var/tmp/sv_ has the SUID bit set.
 
 We have full read/write to _/var/tmp/sv/index.php_
 
-![index](../../../assets/images/ctfs/proving_grounds/solstice/index.png)
+![index](../../../../assets/images/ctfs/proving_grounds/solstice/index.png)
 
 Edit _index.php_ to execute a PHP system command that generates a root shell by copying _/bin/bash_ to _/var/tmp/bash_
 
@@ -143,17 +143,17 @@ system("cp /bin/bash /var/tmp/bash ; chmod u+s /var/tmp/bash");
 ?>
 ```
 
-![nano](../../../assets/images/ctfs/proving_grounds/solstice/nano.png)
+![nano](../../../../assets/images/ctfs/proving_grounds/solstice/nano.png)
 
 We now need to _curl_ the internally accessible web service running on port 57 in order to execute _index.php_ and generate our
 malicious _/var/tmp/bash_ binary.
 
-![curl](../../../assets/images/ctfs/proving_grounds/solstice/curl.png)
+![curl](../../../../assets/images/ctfs/proving_grounds/solstice/curl.png)
 
 Navigate to _/var/tmp_ to see our exploit.
 
-![var_tmp](../../../assets/images/ctfs/proving_grounds/solstice/var_tmp.png)
+![var_tmp](../../../../assets/images/ctfs/proving_grounds/solstice/var_tmp.png)
 
 Execute our malicious _bash_ binary with the _-p_ flag to persist root privileges
 
-![bash](../../../assets/images/ctfs/proving_grounds/solstice/bash.png)
+![bash](../../../../assets/images/ctfs/proving_grounds/solstice/bash.png)

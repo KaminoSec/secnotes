@@ -33,7 +33,7 @@ debian              wheezy              10fcec6d95c4        4 years ago         
 
 According to GTFOBins we can exploit _docker_ to get a root shell
 
-![gtfobins](../../../assets/images/ctfs/proving_grounds/pwned1/gtfobins.png)
+![gtfobins](../../../../assets/images/ctfs/proving_grounds/pwned1/gtfobins.png)
 
 ```bash
 selena@pwned:/home$ docker run -v /:/mnt --rm -it alpine chroot /mnt sh
