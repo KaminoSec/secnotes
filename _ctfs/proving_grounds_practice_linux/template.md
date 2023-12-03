@@ -80,3 +80,8 @@ getcap -r / 2>/dev/null
 - [ ] attempt hydra ssh password crack for discovered users
 - [ ] check _/opt_, _/tmp_, _/var/tmp_, _/etc_, and _/dev/shm_
 - [ ] Check if /etc/passwd is writeable
+- [ ] Check for aliases (e.g. root)
+
+```bash
+compgen -a
+```
