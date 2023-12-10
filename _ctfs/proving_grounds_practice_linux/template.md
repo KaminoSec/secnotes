@@ -5,17 +5,6 @@ parent: Proving Grounds Practice - Linux
 nav_order: 2
 --- -->
 
-# [Box Name]
-
----
-
-## Discovered Ports for Enumeration
-
-## Users and Credentials
-
-- _Users_:
-- _Credentials_:
-
 # Scanning
 
 ---
