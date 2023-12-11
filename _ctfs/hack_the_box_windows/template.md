@@ -31,6 +31,8 @@ sudo nmap -Pn -p- -sC -sV -T4 --open <ip>
 
 [Sushant 747's Guide](https://sushant747.gitbooks.io/total-oscp-guide/content/privilege_escalation_windows.html)
 
+[Warri0r Windows Post Exploitation Commands](https://tim3warri0r.blogspot.com/)
+
 - systeminfo
 
 ```bash
