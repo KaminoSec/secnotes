@@ -1,8 +1,8 @@
 <!-- ---
 layout: default
-title: Katana
-parent: Proving Grounds Practice - Linux
-nav_order: 2
+title: Devel
+parent: Hack The Box - Windows
+nav_order: 1
 --- -->
 
 # Scanning
