@@ -9,6 +9,18 @@ nav_order: 4
 
 ---
 
+## PsExec from Impacket
+
+[Impacket GitHub Repo for psexec.py](https://github.com/fortra/impacket/blob/master/examples/psexec.py)
+
+```bash
+psexec.py Administrator@10.2.24.221 cmd.exe
+
+Password:
+```
+
+![psexec](../../../assets/images/shells/psexec.png)
+
 ## PsExec with Metasploit Framework
 
 ```bash
